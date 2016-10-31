@@ -3,9 +3,12 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
+import java.util.List;
 
 
 public class Controller {
@@ -33,10 +36,13 @@ public class Controller {
         return false;
     }
 
-    private void fillTheArray() {
-        for (int i=0; i < 9; i++) {
-            this.boardElements[i] = '';
+    @FXML
+    private List<ImageView> choiceImageList;
+
+    public void initialize() {
+        for (ImageView choiceImage : choiceImageList) {
+            choiceImage.setImage(new Image("assets/nothing.bmp"));
         }
-        System.out.println(boardElements);
+        System.out.println("initialize success!");
     }
 }
