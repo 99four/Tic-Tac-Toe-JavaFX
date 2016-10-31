@@ -1,12 +1,9 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import java.util.List;
 
@@ -18,7 +15,6 @@ public class Controller {
     //b1 b2 b3
     //c1 c2 c3
 
-    private char[] boardElements;
     private boolean turn = false;
 
     @FXML
@@ -37,11 +33,11 @@ public class Controller {
     }
 
     @FXML
-    private List<ImageView> choiceImageList;
+    private List<ImageView> boardElements;
 
     public void initialize() {
-        for (ImageView choiceImage : choiceImageList) {
-            choiceImage.setImage(new Image("assets/nothing.bmp"));
+        for (ImageView boardElement : boardElements) {
+            boardElement.setImage(new Image("assets/nothing.bmp"));
         }
         System.out.println("initialize success!");
     }
