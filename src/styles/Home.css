@@ -6,6 +6,7 @@
 #nextButton {
     -fx-background-color: #962D3E;
     -fx-text-fill: #F2EBC7;
+    -fx-background-radius: 40;
 }
 
 #usernameInput {

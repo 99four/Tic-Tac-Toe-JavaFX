@@ -16,12 +16,12 @@ import java.io.IOException;
 public class HomeController {
 
     @FXML
-    private Button buttonNext;
+    private Button nextButton;
 
     public void handleClick(Event event) throws IOException {
         Stage stage;
         Parent root;
-        stage = (Stage) buttonNext.getScene().getWindow();
+        stage = (Stage) nextButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("/views/GameBoardView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
