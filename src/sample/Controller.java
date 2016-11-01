@@ -3,9 +3,11 @@ package sample;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.util.List;
+import java.util.Optional;
 
 public class Controller {
 
@@ -37,19 +39,30 @@ public class Controller {
             }
             char winner = turn ? 'O' : 'X';
             alert.setTitle("We have a winner!");
-            alert.setHeaderText("Congratulations!");
+            alert.setHeaderText(null);
             alert.setContentText("Winner is " + winner + ". Do you want to play once again?");
-            alert.showAndWait();
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                this.initialize();
+            } else {
+                // TODO exit room
+            }
 
         } else {
             if (counter == 9) {
                 alert.setTitle("We have a draw!");
-                alert.setHeaderText("No contest!");
+                alert.setHeaderText(null);
                 alert.setContentText("We don't have a winner. Do you want to play once again?");
-                alert.showAndWait();
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK){
+                    this.initialize();
+                } else {
+                    // TODO exit room
+                }
             }
         }
         turn = !turn;
+        counter = 0;
     }
 
     private boolean checkIfThereIsAWinner() {
@@ -86,6 +99,7 @@ public class Controller {
 
     public void initialize() {
         for (ImageView boardElement : boardElements) {
+            boardElement.setDisable(false);
             boardElement.setImage(new Image("assets/nothing.bmp"));
             boardElement.setAccessibleText("N");
         }
