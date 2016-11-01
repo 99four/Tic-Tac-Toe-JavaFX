@@ -8,6 +8,7 @@
     -fx-text-fill: #2F343B;
     -fx-background-radius: 4;
     -fx-padding: 10px 50px 10px 50px;
+    -fx-alignment: center;
 }
 
 .label {
