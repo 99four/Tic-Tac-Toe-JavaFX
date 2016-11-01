@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -22,7 +21,7 @@ public class HomeController {
         Stage stage;
         Parent root;
         stage = (Stage) nextButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/views/GameBoardView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/views/RoomsView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

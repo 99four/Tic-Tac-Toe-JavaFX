@@ -3,16 +3,16 @@
     -fx-text-fill: #F2EBC7;
 }
 
-#nextButton {
+#createButton {
     -fx-background-color: #962D3E;
     -fx-text-fill: #F2EBC7;
     -fx-background-radius: 20;
 }
 
-#usernameInput {
+#listView {
     -fx-background-color: #F2EBC7;
 }
 
-#usernameLabel {
+#textLabel {
     -fx-text-fill: #F2EBC7;
 }

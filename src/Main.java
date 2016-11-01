@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/views/HomeView.fxml"));
 
         primaryStage.setTitle("Tic Tac Toe");
-        primaryStage.setScene(new Scene(root, 600, 480));
+        primaryStage.setScene(new Scene(root, 512, 497));
         primaryStage.show();
     }
 }
