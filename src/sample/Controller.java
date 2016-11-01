@@ -24,13 +24,12 @@ public class Controller {
         if (turn) {
             clickedElement.setAccessibleText("O");
             clickedElement.setImage(new Image("assets/o.bmp"));
-            counter++;
         }
         else {
             clickedElement.setAccessibleText("X");
             clickedElement.setImage(new Image("assets/x.bmp"));
-            counter++;
         }
+        counter++;
         clickedElement.setDisable(true);
 
         if (this.checkIfThereIsAWinner()) {
@@ -45,7 +44,6 @@ public class Controller {
             } else {
                 // TODO exit room
             }
-
         } else {
             if (counter == 9) {
                 alert.setTitle("We have a draw!");
