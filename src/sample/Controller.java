@@ -117,4 +117,16 @@ public class Controller {
             }
         }
     }
+
+    public void exitApplication() {
+        alert.setTitle("Exit");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want exit application?!");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            Platform.exit();
+        } else {
+            // TODO exit room
+        }
+    }
 }
