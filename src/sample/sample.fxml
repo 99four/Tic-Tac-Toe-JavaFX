@@ -97,7 +97,6 @@
 
     <ImageView GridPane.columnIndex="4"
                GridPane.rowIndex="0"
-               onMousePressed="#imageClicked"
                pickOnBounds="true"
                fx:id="whoseTurnImage">
     </ImageView>

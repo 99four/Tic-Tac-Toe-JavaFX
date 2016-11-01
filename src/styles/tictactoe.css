@@ -1,4 +1,4 @@
-.root{
+.root {
     -fx-background-color: #703030;
     -fx-font: 16px "Serif";
 }
@@ -8,15 +8,12 @@
     -fx-text-fill: #2F343B;
     -fx-background-radius: 4;
     -fx-padding: 10px 50px 10px 50px;
-    -fx-clear: both;
 }
 
 .label {
-    -fx-float: left;
 }
 
 #whoseTurnImage {
-    -fx-float: left;
 }
 
 .label {
