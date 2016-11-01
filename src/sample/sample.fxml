@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" stylesheets="@/styles/tictactoe.css">
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
     <ImageView
@@ -102,7 +102,7 @@
                fx:id="whoseTurnImage">
     </ImageView>
 
-    <Button GridPane.columnIndex="4"
+    <Button GridPane.columnIndex="3"
             GridPane.rowIndex="1"
             text="Exit"
             onMousePressed="#exitApplication"/>

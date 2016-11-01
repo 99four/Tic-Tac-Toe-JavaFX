@@ -1,0 +1,25 @@
+.root{
+    -fx-background-color: #703030;
+    -fx-font: 16px "Serif";
+}
+
+.button {
+    -fx-background-color: #E3CDA4;
+    -fx-text-fill: #2F343B;
+    -fx-background-radius: 4;
+    -fx-padding: 10px 50px 10px 50px;
+    -fx-clear: both;
+}
+
+.label {
+    -fx-float: left;
+}
+
+#whoseTurnImage {
+    -fx-float: left;
+}
+
+.label {
+    -fx-font-size: 30px;
+    -fx-text-fill: #E3CDA4;
+}
