@@ -15,30 +15,50 @@ public class Controller {
     //b1 b2 b3
     //c1 c2 c3
 
+    @FXML
+    private List<ImageView> boardElements;
+
     private boolean turn = false;
 
     @FXML
     protected void imageClicked(Event e) {
-        ImageView clickedImage = (ImageView)e.getSource();
-        if (turn) clickedImage.setImage(new Image("assets/o.bmp"));
-        else clickedImage.setImage(new Image("assets/x.bmp"));
-        clickedImage.setDisable(true);
+        ImageView boardElement = (ImageView)e.getSource();
+        if (turn) {
+            boardElement.setAccessibleText("O");
+            boardElement.setImage(new Image("assets/o.bmp"));
+        }
+        else {
+            boardElement.setAccessibleText("X");
+            boardElement.setImage(new Image("assets/x.bmp"));
+        }
+        boardElement.setDisable(true);
 
-        if (this.checkIfThereIsAWinner()) System.out.println("We have a winner");
+        if (this.checkIfThereIsAWinner(e)) {
+            for (ImageView imageElement : boardElements) {
+                imageElement.setDisable(true);
+            }
+            System.out.println("We have a winner");
+        }
         else turn = !turn;
     }
 
-    private boolean checkIfThereIsAWinner() {
-        return false;
+    private boolean checkIfThereIsAWinner(Event e) {
+        int counter = 1;
+        //for (ImageView boardElement : boardElements) {
+//            System.out.println(boardElement.getAccessibleText());
+//            System.out.println(counter++);
+        //}
+        if (boardElements.get(0).getAccessibleText().equals(boardElements.get(1).getAccessibleText())) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
-    @FXML
-    private List<ImageView> boardElements;
 
     public void initialize() {
         for (ImageView boardElement : boardElements) {
             boardElement.setImage(new Image("assets/nothing.bmp"));
+            boardElement.setAccessibleText("N");
         }
-        System.out.println("initialize success!");
     }
 }
