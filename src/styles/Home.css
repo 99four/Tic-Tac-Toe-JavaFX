@@ -1,0 +1,17 @@
+.root {
+    -fx-background-color: #343642;
+    -fx-text-fill: #F2EBC7;
+}
+
+#nextButton {
+    -fx-background-color: #962D3E;
+    -fx-text-fill: #F2EBC7;
+}
+
+#usernameInput {
+    -fx-background-color: #F2EBC7;
+}
+
+#usernameLabel {
+    -fx-text-fill: #F2EBC7;
+}

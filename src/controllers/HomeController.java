@@ -19,18 +19,12 @@ public class HomeController {
     private Button buttonNext;
 
     public void handleClick(Event event) throws IOException {
-        System.out.println("jestem tu");
         Stage stage;
         Parent root;
-        if (event.getSource() == buttonNext) {
-            System.out.println("tu tez");
-            //get reference to the button's stage
-            stage = (Stage) buttonNext.getScene().getWindow();
-            //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("/views/GameBoardView.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
+        stage = (Stage) buttonNext.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/views/GameBoardView.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
