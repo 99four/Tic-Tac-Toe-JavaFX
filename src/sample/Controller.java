@@ -33,6 +33,7 @@ public class Controller {
         }
         clickedElement.setDisable(true);
 
+
         if (this.checkIfThereIsAWinner()) {
             for (ImageView boardElement : boardElements) {
                 boardElement.setDisable(true);
@@ -43,20 +44,18 @@ public class Controller {
     }
 
     private boolean checkIfThereIsAWinner() {
-        int[] tab = {1, 2};
+        int[] tab = {0, 1, 2};
         return this.checkIfElementsAreEqual(tab);
     }
 
-    public boolean checkIfElementsAreEqual(int[] indices){
+    public boolean checkIfElementsAreEqual(int[] indices) {
         String start = boardElements.get(indices[0]).getAccessibleText();
-        for (int i = 1; i <= boardElements.size(); i++){
-            if (!start.equals(boardElements.get(indices[i]).getAccessibleText())) {
-                System.out.println("false");
+        for (int i = 1; i < indices.length; i++) {
+            if (!start.equals(boardElements.get(indices[i]).getAccessibleText()) || start.equals("N")) {
                 return false;
             }
             start = boardElements.get(indices[i]).getAccessibleText();
         }
-        System.out.println("true");
         return true;
     }
 
