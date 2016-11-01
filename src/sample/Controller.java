@@ -1,11 +1,13 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -45,6 +47,7 @@ public class Controller {
                 this.initialize();
             } else {
                 // TODO exit room
+                Platform.exit();
             }
             counter = 0;
         } else if (counter == 9) {
@@ -56,6 +59,7 @@ public class Controller {
                 this.initialize();
             } else {
                 // TODO exit room
+                Platform.exit();
             }
             counter = 0;
         }
