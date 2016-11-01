@@ -2,20 +2,19 @@ package sample;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.util.List;
 
-
 public class Controller {
-    // true for O, false for X
 
     @FXML
     private List<ImageView> boardElements;
 
-    private boolean turn = false;
+    private boolean turn = true; // true for 'O', false for 'X'
     private short counter = 0;
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
     @FXML
     protected void imageClicked(Event e) {
@@ -32,14 +31,25 @@ public class Controller {
         }
         clickedElement.setDisable(true);
 
-
         if (this.checkIfThereIsAWinner()) {
             for (ImageView boardElement : boardElements) {
                 boardElement.setDisable(true);
             }
-            System.out.println("We have a winner, counter = " + counter);
+            char winner = turn ? 'O' : 'X';
+            alert.setTitle("We have a winner!");
+            alert.setHeaderText("Congratulations!");
+            alert.setContentText("Winner is " + winner + ". Do you want to play once again?");
+            alert.showAndWait();
+
+        } else {
+            if (counter == 9) {
+                alert.setTitle("We have a draw!");
+                alert.setHeaderText("No contest!");
+                alert.setContentText("We don't have a winner. Do you want to play once again?");
+                alert.showAndWait();
+            }
         }
-        else turn = !turn;
+        turn = !turn;
     }
 
     private boolean checkIfThereIsAWinner() {
