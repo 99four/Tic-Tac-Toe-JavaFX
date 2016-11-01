@@ -22,37 +22,42 @@ public class Controller {
 
     @FXML
     protected void imageClicked(Event e) {
-        ImageView boardElement = (ImageView)e.getSource();
+        ImageView clickedElement = (ImageView)e.getSource();
         if (turn) {
-            boardElement.setAccessibleText("O");
-            boardElement.setImage(new Image("assets/o.bmp"));
+            clickedElement.setAccessibleText("O");
+            clickedElement.setImage(new Image("assets/o.bmp"));
         }
         else {
-            boardElement.setAccessibleText("X");
-            boardElement.setImage(new Image("assets/x.bmp"));
+            clickedElement.setAccessibleText("X");
+            clickedElement.setImage(new Image("assets/x.bmp"));
         }
-        boardElement.setDisable(true);
+        clickedElement.setDisable(true);
 
-        if (this.checkIfThereIsAWinner(e)) {
-            for (ImageView imageElement : boardElements) {
-                imageElement.setDisable(true);
+        if (this.checkIfThereIsAWinner()) {
+            for (ImageView boardElement : boardElements) {
+                boardElement.setDisable(true);
             }
             System.out.println("We have a winner");
         }
         else turn = !turn;
     }
 
-    private boolean checkIfThereIsAWinner(Event e) {
-        int counter = 1;
-        //for (ImageView boardElement : boardElements) {
-//            System.out.println(boardElement.getAccessibleText());
-//            System.out.println(counter++);
-        //}
-        if (boardElements.get(0).getAccessibleText().equals(boardElements.get(1).getAccessibleText())) {
-            return true;
-        } else {
-            return false;
+    private boolean checkIfThereIsAWinner() {
+        int[] tab = {1, 2};
+        return this.checkIfElementsAreEqual(tab);
+    }
+
+    public boolean checkIfElementsAreEqual(int[] indices){
+        String start = boardElements.get(indices[0]).getAccessibleText();
+        for (int i = 1; i <= boardElements.size(); i++){
+            if (!start.equals(boardElements.get(indices[i]).getAccessibleText())) {
+                System.out.println("false");
+                return false;
+            }
+            start = boardElements.get(indices[i]).getAccessibleText();
         }
+        System.out.println("true");
+        return true;
     }
 
     public void initialize() {
