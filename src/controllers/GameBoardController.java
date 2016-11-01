@@ -1,4 +1,4 @@
-package sample;
+package controllers;
 
 import javafx.application.Platform;
 import javafx.event.Event;
@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import java.util.List;
 import java.util.Optional;
 
-public class Controller {
+public class GameBoardController {
 
     @FXML
     private List<ImageView> boardElements;
