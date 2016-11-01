@@ -13,7 +13,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/views/HomeView.fxml"));
-
         primaryStage.setTitle("Tic Tac Toe");
         primaryStage.setScene(new Scene(root, 512, 497));
         primaryStage.show();

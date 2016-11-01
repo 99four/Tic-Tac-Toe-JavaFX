@@ -9,6 +9,12 @@
     -fx-background-radius: 20;
 }
 
+#joinButton {
+    -fx-background-color: #348899;
+    -fx-text-fill: #F2EBC7;
+    -fx-background-radius: 20;
+}
+
 #listView {
     -fx-background-color: #F2EBC7;
 }

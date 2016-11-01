@@ -22,5 +22,10 @@
          <font>
             <Font size="16.0" />
          </font></Button>
+      <Button fx:id="joinButton" layoutX="66.0" layoutY="432.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Join">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
