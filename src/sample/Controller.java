@@ -13,6 +13,8 @@ public class Controller {
 
     @FXML
     private List<ImageView> boardElements;
+    @FXML
+    private ImageView whoseTurnImage;
 
     private boolean turn = true; // true for 'O', false for 'X'
     private short counter = 0;
@@ -44,21 +46,21 @@ public class Controller {
             } else {
                 // TODO exit room
             }
-        } else {
-            if (counter == 9) {
-                alert.setTitle("We have a draw!");
-                alert.setHeaderText(null);
-                alert.setContentText("We don't have a winner. Do you want to play once again?");
-                Optional<ButtonType> result = alert.showAndWait();
-                if (result.get() == ButtonType.OK){
-                    this.initialize();
-                } else {
-                    // TODO exit room
-                }
+            counter = 0;
+        } else if (counter == 9) {
+            alert.setTitle("We have a draw!");
+            alert.setHeaderText(null);
+            alert.setContentText("We don't have a winner. Do you want to play once again?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                this.initialize();
+            } else {
+                // TODO exit room
             }
+            counter = 0;
         }
         turn = !turn;
-        counter = 0;
+        whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
     }
 
     private boolean checkIfThereIsAWinner() {
@@ -94,6 +96,8 @@ public class Controller {
     }
 
     public void initialize() {
+        whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
+
         for (ImageView boardElement : boardElements) {
             boardElement.setDisable(false);
             boardElement.setImage(new Image("assets/nothing.bmp"));
