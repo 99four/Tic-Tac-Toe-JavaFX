@@ -34,9 +34,7 @@ public class Controller {
         clickedElement.setDisable(true);
 
         if (this.checkIfThereIsAWinner()) {
-            for (ImageView boardElement : boardElements) {
-                boardElement.setDisable(true);
-            }
+            this.disableFreeFields();
             char winner = turn ? 'O' : 'X';
             alert.setTitle("We have a winner!");
             alert.setHeaderText(null);
@@ -102,6 +100,15 @@ public class Controller {
             boardElement.setDisable(false);
             boardElement.setImage(new Image("assets/nothing.bmp"));
             boardElement.setAccessibleText("N");
+        }
+    }
+
+    public void disableFreeFields() {
+        for (ImageView boardElement : boardElements) {
+            if (boardElement.getAccessibleText().equals("N")) {
+                boardElement.setDisable(true);
+                boardElement.setImage(new Image("assets/disabled.bmp"));
+            }
         }
     }
 }
