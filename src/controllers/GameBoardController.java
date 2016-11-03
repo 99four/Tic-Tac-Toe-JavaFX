@@ -21,6 +21,12 @@ public class GameBoardController {
     private ImageView whoseTurnImage;
     @FXML
     private ImageView whoseNotTurnImage;
+    @FXML
+    private ImageView a1;
+    @FXML
+    private ImageView b1;
+    @FXML
+    private ImageView c1;
 
     private boolean turn = true; // true for 'O', false for 'X'
     private short counter = 0;
@@ -106,6 +112,9 @@ public class GameBoardController {
 
     public void initialize() {
         GridPane.setHalignment(whoseTurnImage, HPos.RIGHT);
+        GridPane.setHalignment(a1, HPos.RIGHT);
+        GridPane.setHalignment(b1, HPos.RIGHT);
+        GridPane.setHalignment(c1, HPos.RIGHT);
 
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
         whoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
