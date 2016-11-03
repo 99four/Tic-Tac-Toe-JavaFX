@@ -6,28 +6,24 @@
 <?import java.util.ArrayList?>
 
 <?import javafx.scene.control.Label?>
+
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
 <GridPane fx:controller="controllers.GameBoardController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" stylesheets="@/styles/tictactoe.css">
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
-    <Label GridPane.columnIndex="0"
-           GridPane.rowIndex="0"
-           text="Damian"/>
+    <Label text="Damian"/>
 
-    <ImageView GridPane.columnIndex="1"
-               GridPane.rowIndex="0"
-               pickOnBounds="true"
+    <ImageView pickOnBounds="true"
                fx:id="whoseTurnImage">
     </ImageView>
 
-    <Label GridPane.columnIndex="2"
-           GridPane.rowIndex="0"
-           text="Natalia"/>
+    <Label text="Natalia"/>
 
-    <ImageView GridPane.columnIndex="3"
-               GridPane.rowIndex="0"
-               pickOnBounds="true"
-               fx:id="WhoseNotTurnImage">
+    <ImageView pickOnBounds="true"
+               fx:id="whoseNotTurnImage">
     </ImageView>
 
     <ImageView

@@ -17,7 +17,7 @@ public class GameBoardController {
     @FXML
     private ImageView whoseTurnImage;
     @FXML
-    private ImageView WhoseNotTurnImage;
+    private ImageView whoseNotTurnImage;
 
     private boolean turn = true; // true for 'O', false for 'X'
     private short counter = 0;
@@ -66,7 +66,7 @@ public class GameBoardController {
         }
         turn = !turn;
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
-        WhoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
+        whoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
     }
 
     private boolean checkIfThereIsAWinner() {
@@ -103,7 +103,7 @@ public class GameBoardController {
 
     public void initialize() {
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
-        WhoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
+        whoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
 
         for (ImageView boardElement : boardElements) {
             boardElement.setDisable(false);
