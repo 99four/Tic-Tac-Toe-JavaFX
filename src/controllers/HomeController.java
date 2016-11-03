@@ -10,7 +10,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.Socket;
 import java.util.Optional;
 
 /**
@@ -23,6 +24,31 @@ public class HomeController {
     Alert alert = new Alert(Alert.AlertType.ERROR);
 
     public void handleClick(Event event) throws IOException {
+        String serverName = "localhost";
+        int port = 6669;
+
+        System.out.println("Connecting to " + serverName + " on port " + port);
+        Socket client = new Socket(serverName, port);
+
+        //Send the message to the server
+        OutputStream os = client.getOutputStream();
+        OutputStreamWriter osw = new OutputStreamWriter(os);
+        BufferedWriter bw = new BufferedWriter(osw);
+
+        String number = "jkjkjjkkj";
+
+        String sendMessage = number;
+        bw.write(sendMessage);
+        bw.flush();
+        System.out.println("Message sent to the server : "+sendMessage);
+
+        //Get the return message from the server
+        InputStream is = client.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+        String message = br.readLine();
+        System.out.println("Message received from the server : " +message);
+        client.close();
 
         if (usernameInput.getText().length() == 0) {
             alert.setTitle(null);
