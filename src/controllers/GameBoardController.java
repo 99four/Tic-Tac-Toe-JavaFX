@@ -16,6 +16,8 @@ public class GameBoardController {
     private List<ImageView> boardElements;
     @FXML
     private ImageView whoseTurnImage;
+    @FXML
+    private ImageView WhoseNotTurnImage;
 
     private boolean turn = true; // true for 'O', false for 'X'
     private short counter = 0;
@@ -64,6 +66,7 @@ public class GameBoardController {
         }
         turn = !turn;
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
+        WhoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
     }
 
     private boolean checkIfThereIsAWinner() {
@@ -100,6 +103,7 @@ public class GameBoardController {
 
     public void initialize() {
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
+        WhoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
 
         for (ImageView boardElement : boardElements) {
             boardElement.setDisable(false);
@@ -114,18 +118,6 @@ public class GameBoardController {
                 boardElement.setDisable(true);
                 boardElement.setImage(new Image("assets/disabled.bmp"));
             }
-        }
-    }
-
-    public void exitApplication() {
-        alert.setTitle("Exit");
-        alert.setHeaderText(null);
-        alert.setContentText("Are you sure you want exit application?!");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            Platform.exit();
-        } else {
-            // TODO exit room
         }
     }
 }
