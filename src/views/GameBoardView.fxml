@@ -8,7 +8,6 @@
 <?import java.util.ArrayList?>
 <GridPane fx:controller="controllers.GameBoardController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
-          gridLinesVisible="true"
           stylesheets="@/styles/tictactoe.css">
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
