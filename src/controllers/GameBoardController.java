@@ -3,10 +3,13 @@ package controllers;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.geometry.HPos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -102,6 +105,8 @@ public class GameBoardController {
     }
 
     public void initialize() {
+        GridPane.setHalignment(whoseTurnImage, HPos.RIGHT);
+
         whoseTurnImage.setImage(turn ? new Image("assets/osmall.bmp") : new Image("assets/xsmall.bmp"));
         whoseNotTurnImage.setImage(turn ? new Image("assets/xsmall.bmp") : new Image("assets/osmall.bmp"));
 
