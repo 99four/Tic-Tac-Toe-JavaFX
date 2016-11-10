@@ -11,7 +11,7 @@
           stylesheets="@/styles/tictactoe.css">
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
-    <Label text="Damiaaaaaan" GridPane.columnIndex="0"
+    <Label text="Damian" GridPane.columnIndex="0"
            GridPane.rowIndex="0"/>
 
     <ImageView pickOnBounds="true"
@@ -19,7 +19,7 @@
                GridPane.rowIndex="0">
     </ImageView>
 
-    <Label text="Natalaaaaia" GridPane.columnIndex="2"
+    <Label text="Bladsfsfsd" GridPane.columnIndex="2"
            GridPane.rowIndex="0"/>
 
     <ImageView pickOnBounds="true"

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class GameBoardController {
-
     @FXML
     private List<ImageView> boardElements;
     @FXML
